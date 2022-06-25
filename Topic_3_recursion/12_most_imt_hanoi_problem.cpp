@@ -11,6 +11,5 @@ int main(){
     int n;
     cin>>n;
     TOH(n , 1 , 2 , 3);
-   cout<<2/10<<endl;
     return 0;
 }
