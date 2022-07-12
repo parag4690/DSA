@@ -2,37 +2,34 @@
 using namespace std;
 class node{
     public:
+    node *prev;
     int data;
-    node *p;
-}*first;
+    node *next;
+}*first=NULL;
 void create(vector<int> v){
-    int i;
     node *t , *last;
     first = new node;
-    first->data = v[0];
-    first->p = NULL;
+    first->prev=NULL;
+    first->data=v[0];
+    first->next=NULL;
     last = first;
 
-    //
     for(int i=1; i<v.size(); i++){
         t = new node;
         t->data = v[i];
-        t->p=NULL;
-        last->p = t;
-        last = t;
+        t->prev=last;
+        t->next=NULL;
+        last->next=t;
+        last=t;
     }
 }
-//  recursion 
-int sum(node *link){
-    if(link==NULL){
-       return 0;
+void display(node *p){
+    while(p!=NULL){
+        cout<<p->data<<" ";
+        p=p->next;
     }
-    else{
-        return sum(link->p) + link->data; 
-    }
+    cout<<endl;
 }
-
-// 
 int main(){
     int n,a;
     cin>>n;
@@ -42,6 +39,5 @@ int main(){
         v.push_back(a);
     }
     create(v);
-
-    cout<<sum(first)<<endl;
+    display(first);
 }
