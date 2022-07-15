@@ -1,30 +1,34 @@
 #include <iostream>
+#include <string>
 using namespace std;
-// using hashing
-// code chef pangram 
-int main(){
-    int t;
-    cin>>t;
-    while(t--){
-        int n=26;
-        int cost[n];
-        for(int i=0; i<n; i++){
-            cin>>cost[i];
-        }
-        string s;
-        cin>>s;
-        int H[26]={0};
-        for(int i=0; s[i]!='\0'; i++){
-            H[s[i]-97]++;
-        }
-        int sum=0;
-        for(int i=0; i<26; i++){
-            if(H[i]==0){
-                sum=sum+cost[i];
-            }
-        }
+// Change in the given string itself. So no need to return or print anything
 
-        cout<<sum<<endl;
+void removeX(char input[]) {
+    static int c=0;
+   if(input[0]=='\0'){
+       return;
+   }
+   if(input[0]!='x'){
+       cout<<input+1<<endl;
+       removeX(input+1); // 
+   }
+   else{
+    
+       int i=1;
+       for(; input[i]!='\0'; i++){
+           input[i-1] = input[i];
+       }
+       cout<<"i"<<input[i]<<endl;
+       input[i-1]=input[i];
+       
+       c++;
+       removeX(input);
+   }
+}
 
-    }
+int main() {
+    char input[100];
+    cin.getline(input, 100);
+    removeX(input);
+    cout << input << endl;
 }
