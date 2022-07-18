@@ -33,16 +33,17 @@ void sort(node *p,int n , int x){
         first=t;
     }
     else{
+        // 1 3 and x is 2 
         while(p && p->data<x){
-            q=p;
-            p=p->next;
+            q=p; // stop at 1;
+            p=p->next; // stop at 3;
         }
         if(p==first){ // agr vo phla vala hua to 
             t->next = first;
             first=t;
         }
         else{
-            t->next = q->next;
+            t->next = q->next; // 1 ->2-> 3;
             q->next = t;
         }
     }
@@ -56,7 +57,7 @@ void display(node *d){
     cout<<endl;
 }
 int main(){
-    int a[]={1,3,4,5,6};
+    int a[]={1,3,4,6,5};
     create(a , 5);
     int x;
     cin>>x;

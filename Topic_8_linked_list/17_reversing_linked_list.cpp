@@ -27,7 +27,7 @@ void reverse(node *p){
   while(p!=NULL){
       r=q;
       q=p;
-      p=p->next;
+      p=p->next; // ye phle krna h kyuki 
       q->next=r;
   }
   first = q; // taki unhe lge ki list yha se start hai
