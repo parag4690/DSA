@@ -159,9 +159,10 @@ void Tree::levelOrder( Node *p)
         }
         if (root->rchild)
         {
+            printf("%d ", root->rchild->data);
+            q.enqueue(root->rchild);
         }
-        printf("%d ", root->rchild->data);
-        q.enqueue(root->rchild);
+        
     }
 }
 int Tree::Height(Node *root){
