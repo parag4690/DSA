@@ -61,15 +61,15 @@ void Tree::preOrder(Node *p){
 }
 void Tree::inOrder(Node *p){
     if(p){
-        preOrder(p->lchild);
+        inOrder(p->lchild);
         cout<<p->data<<" ";
-        preOrder(p->rchild);
+        inOrder(p->rchild);
     }
 }
 void Tree::postOrder(Node *p){
     if(p){
-        preOrder(p->lchild);
-        preOrder(p->rchild);
+        postOrder(p->lchild);
+        postOrder(p->rchild);
         cout<<p->data<<" ";
     }
 }
