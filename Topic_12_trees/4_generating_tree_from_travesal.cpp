@@ -36,7 +36,6 @@ int searchInorder(int inOrder[] , int start , int end , int data){
 }
 
 Node* Tree::generateFromTraversal(int *inorder, int *preorder, int inStart, int inEnd) {
-    // Reference: https://algorithms.tutorialhorizon.com/make-a-binary-tree-from-given-inorder-and-preorder-traveral/
     static int preIndex = 0;
  
     if (inStart > inEnd){

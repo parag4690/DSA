@@ -22,7 +22,7 @@ void create(int *a , int n){
 }
 
 void reverse(node *p){
-  node *q =NULL;
+  node *q =NULL;  // i can write like this node *p=first again
   node *r = NULL;
   while(p!=NULL){
       r=q;
